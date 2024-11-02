@@ -7,13 +7,13 @@ from entities import Player, Ground, initilizeEntities
 class Game(Gameloop, Player, Ground):
     def __init__(self):
         pygame.init()
-        self.SCREEN_WIDTH = 800
+        self.SCREEN_WIDTH = 900
         self.SCREEN_HEIGHT = 600
         self.screen = pygame.display.set_mode((self.SCREEN_WIDTH, self.SCREEN_HEIGHT))
         self.clock = pygame.time.Clock()
         self.run = True
         initilizeEntities(self)
-        self.gameloop = Gameloop(self.screen, self.player, self.grounds)
+        self.gameloop = Gameloop(self.screen, self.players, self.grounds)
         
     def execute(self):
         while self.run:
