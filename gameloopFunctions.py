@@ -22,9 +22,4 @@ class GameloopFunctions():
             else:
                 player.acc += 0.5
 
-    def doAiStuff(self):
-        self.gameloop.AiTimer += 1
-        if self.gameloop.AiTimer == 10:
-            self.gameloop.AiTimer = 0
-            for player in self.players:
-                player.control = random.choice(("jump", "right", "left"))
+

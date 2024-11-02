@@ -2,11 +2,13 @@
 import pygame
 from gameloop import Gameloop
 from entities import Player, Ground, initilizeEntities
+from evolutionAi import EvolutionAi
  
 
-class Game(Gameloop, Player, Ground):
+class Game(Gameloop, Player, Ground, EvolutionAi):
     def __init__(self):
         pygame.init()
+        
         self.SCREEN_WIDTH = 900
         self.SCREEN_HEIGHT = 600
         self.screen = pygame.display.set_mode((self.SCREEN_WIDTH, self.SCREEN_HEIGHT))
@@ -14,6 +16,7 @@ class Game(Gameloop, Player, Ground):
         self.run = True
         initilizeEntities(self)
         self.gameloop = Gameloop(self.screen, self.players, self.grounds)
+        self.EvolutionAiInit()
         
     def execute(self):
         while self.run:

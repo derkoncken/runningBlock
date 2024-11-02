@@ -4,7 +4,6 @@ from gameloopFunctions import GameloopFunctions
 class Gameloop(GameloopFunctions):
 
     def __init__(self, screen, player, grounds):
-        self.AiTimer = 0
         self.screen = screen
         self.player = player
         self.grounds = grounds
@@ -28,5 +27,7 @@ class Gameloop(GameloopFunctions):
             if player.control == "right":
                 player.move_ip(4,0)
 
+
+        
         self.displayEntities()     
     
