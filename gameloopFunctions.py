@@ -12,9 +12,6 @@ class GameloopFunctions():
             if self.player.colliderect(ground):
                 self.player.touchsGround = True
             
-
-                
-
     def gravity(self):
         if self.player.touchsGround:
             self.player.acc =0
