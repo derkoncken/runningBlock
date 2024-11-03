@@ -19,7 +19,7 @@ class Ground(pygame.Rect):
 def initilizeEntities(self):
     
     self.players = []
-    n = 10
+    n = 50
     for i in range(n):
         player = Player(0, 520, 50, 50)
         self.players.append(player)
