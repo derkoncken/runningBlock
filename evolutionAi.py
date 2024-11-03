@@ -7,11 +7,11 @@ class EvolutionAi():
         self.state = 0
         self.gen = 0
         self.actionList = []
-        self.newMovements = 50
+        self.newMovements = 5
 
     def doAiStuff(self):
         self.AiTimer += 1
-        if self.AiTimer == 5:
+        if self.AiTimer == 30:
             self.AiTimer = 0
             if self.state == self.gen:
                 bestPlayer = self.players[0]
