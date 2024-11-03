@@ -4,30 +4,36 @@ from entities import initilizeEntities
 class EvolutionAi():
     def EvolutionAiInit(self):
         self.AiTimer = 0
-        self.state = 0
+        self.stateMove = 0
+        self.maxMoves = 0
+        self.moves = []
+        self.newMovements = 10
         self.gen = 0
-        self.actionList = []
-        self.newMovements = 5
 
     def doAiStuff(self):
         self.AiTimer += 1
         if self.AiTimer == 15:
             self.AiTimer = 0
-            if self.state == self.gen:
+            if self.stateMove == self.maxMoves:
                 bestPlayer = self.players[0]
                 for player in self.players:
-                    if player.centery < bestPlayer.centery:
+                    player.vitality = player.top
+                    if player.vitality < bestPlayer.vitality:
                         bestPlayer = player
-                self.actionList = bestPlayer.moveset
-                self.state = 0
-                self.gen += self.newMovements
+                self.moves = bestPlayer.moveset
+                self.stateMove = 0
+                self.gen += 1
+                self.maxMoves += self.newMovements
                 initilizeEntities(self)
-                print(self.gen)
+                print("-------------------------------------")
+                print("Generation: " + str(self.gen))
+                print("Amout of Moves: " + str(self.maxMoves))
+                print("Best Instance had a vitality of: " + str(580 - bestPlayer.vitality))
 
                 for player in self.players:
-                    player.moveset = list(self.actionList)
+                    player.moveset = list(self.moves)
                     for i in range(self.newMovements):
                         player.moveset.append(random.choice(("jump", "right", "left")))
             for player in self.players:
-                player.control = player.moveset[self.state]
-            self.state += 1
+                player.control = player.moveset[self.stateMove]
+            self.stateMove += 1
