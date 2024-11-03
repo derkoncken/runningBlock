@@ -22,7 +22,7 @@ class Game(Gameloop, Player, Ground, EvolutionAi):
         while self.run:
             pygame.display.update()
             self.screen.fill((0,0,0))
-            self.clock.tick(30)
+            self.clock.tick(60)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.run = False
