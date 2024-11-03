@@ -6,8 +6,8 @@ class GameloopFunctions():
         for player in self.players:
 
         
-            #pygame.draw.rect(self.screen, player.color, player)
-            ""
+            pygame.draw.rect(self.screen, player.color, player)
+            """
             lamaRaw = pygame.image.load("lama.png").convert_alpha()
             lama = pygame.transform.scale(lamaRaw, (50, 50))
             if player.control == "right":
@@ -20,7 +20,7 @@ class GameloopFunctions():
                 self.screen.blit(leftLama, player)
             if player.orientation == "right":
                 self.screen.blit(lama, player)
-            ""
+            """
         for ground in self.grounds:
             pygame.draw.rect(self.screen, (255,0,0), ground)
 
