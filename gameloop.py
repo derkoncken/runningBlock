@@ -27,7 +27,7 @@ class Gameloop(GameloopFunctions):
             if player.control == "right":
                 player.move_ip(4,0)
 
-
+            
         
         self.displayEntities()     
     

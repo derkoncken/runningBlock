@@ -11,7 +11,7 @@ class EvolutionAi():
 
     def doAiStuff(self):
         self.AiTimer += 1
-        if self.AiTimer == 30:
+        if self.AiTimer == 15:
             self.AiTimer = 0
             if self.state == self.gen:
                 bestPlayer = self.players[0]
