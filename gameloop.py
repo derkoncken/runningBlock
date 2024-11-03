@@ -29,16 +29,17 @@ class Gameloop(GameloopFunctions):
 
 
         for ground in self.grounds:
-            if ground.control is not None:
+            
+            if ground.range is not None:
+                if ground.midleft[0] < ground.range[0]:
+                    ground.control = "right"
+                if ground.midright[0] > ground.range[1]:
+                    ground.control = "left"
+
                 if ground.control == "right":
                     ground.move_ip(2,0)
-                    if ground.centerx > 600:
-                        ground.control = "left"
                 if ground.control == "left":
                     ground.move_ip(-2,0)
-                    if ground.centerx < 300:
-                        ground.control = "right"
-        
             
         
         self.displayEntities()     
