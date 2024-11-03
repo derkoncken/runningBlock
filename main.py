@@ -14,15 +14,16 @@ class Game(Gameloop, Player, Ground, EvolutionAi):
         self.screen = pygame.display.set_mode((self.SCREEN_WIDTH, self.SCREEN_HEIGHT))
         self.clock = pygame.time.Clock()
         self.run = True
+        self.EvolutionAiInit()
         initilizeEntities(self)
         self.gameloop = Gameloop(self.screen, self.players, self.grounds)
-        self.EvolutionAiInit()
+        
         
     def execute(self):
         while self.run:
             pygame.display.update()
             self.screen.fill((0,0,0))
-            self.clock.tick(60)
+            self.clock.tick(90)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.run = False

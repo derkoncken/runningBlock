@@ -22,7 +22,7 @@ class Ground(pygame.Rect):
 def initilizeEntities(self):
     
     self.players = []
-    n = 2000
+    n = self.numberOfEntities
     for i in range(n):
         player = Player(0, 520, 50, 50)
         self.players.append(player)
